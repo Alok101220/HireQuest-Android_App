@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SearchFragment"
+    android:orientation="vertical"
+    android:id="@+id/search_fragment"
+    android:background="@color/page_background"
+    android:fitsSystemWindows="true"
+
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_search_bar_container"
+        app:cardElevation="0dp"
+        android:backgroundTint="@color/page_background"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/page_background"
+
+            >
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/icon_back"
+                android:id="@+id/backButton"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-10dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_bar_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:hint="Search "
+                android:textColor="@color/editText_color"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/icon_search_ic"
+                android:drawablePadding="10dp"
+                android:paddingStart="15dp"
+                android:layout_toEndOf="@+id/backButton"
+                android:layout_toStartOf="@+id/search_bar_filter_icon"
+                android:background="@drawable/searchview_border"
+                android:layout_centerVertical="true"
+                />
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="51dp"
+                android:id="@+id/search_bar_filter_icon"
+                android:src="@drawable/filter_img"
+                android:padding="10dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/searchview_border"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/search_fragment_recent_searches_container"
+        android:layout_below="@+id/search_search_bar_container"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent Searches"
+                android:textSize="14sp"
+                android:textColor="@color/text"
+                android:layout_marginStart="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_fragment_recent_searches_clear_all"
+                android:text="clear all"
+                android:textSize="12sp"
+                android:textColor="@color/remove_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_fragment_recent_searches"
+            android:layout_below="@+id/search_search_bar_container"
+            android:visibility="visible"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/search_user_result_not_found"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:src="@drawable/icon_no_result"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="No results found"
+            android:textColor="@color/base_color"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="The search could not be found, please check \nspelling or write another word."
+            android:textColor="@color/text"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:id="@+id/search_fragment_loading_animation"
+        android:layout_below="@+id/search_search_bar_container"
+        app:lottie_fileName="loading1.json"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_fragment_recyclerView"
+        android:layout_below="@+id/search_search_bar_container"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RegisterActivity"
+    tools:ignore="MissingClass"
+    android:id="@+id/register_page"
+    android:background="@color/page_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/backBtn"
+                    android:src="@drawable/icon_back_active"
+                    android:layout_alignParentTop="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sign_up_heading"
+                    android:text="Join HireQuest"
+                    android:layout_below="@+id/backBtn"
+                    android:textColor="@color/heading"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/or"
+                    android:text="You can sign up here using valid email address which has been not used before."
+                    android:layout_below="@+id/sign_up_heading"
+                    android:textColor="@color/text"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="2dp"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/join_email_container"
+            android:layout_centerInParent="true"
+            android:src="@drawable/join_page_img" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/join_email_container"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/white"
+            android:layout_marginBottom="-20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="20dp"
+            android:outlineAmbientShadowColor="@color/base_color"
+            >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="50dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/joinEmailTextField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:textColorHint="@color/black"
+                            app:boxStrokeColor="@color/outline_color"
+                            app:hintTextColor="@color/base_color"
+                            app:helperTextTextColor="@color/text"
+                            app:helperText="Enter valid email "
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/joinEmailEditText"
+                                    android:textColor="@color/black"
+                                    android:inputType="textEmailAddress"
+                                    />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/continueBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="@color/base_color"
+                            android:textColor="@color/page_background"
+                            android:visibility="visible"
+                            app:cornerRadius="10dp"
+                            app:elevation="20dp"
+                            android:shadowColor="@color/base_color"
+                            android:outlineAmbientShadowColor="@color/base_color"
+                            android:outlineSpotShadowColor="@color/base_color"
+                            app:rippleColor="@color/hint_color"
+                            app:strokeColor="@color/hint_color"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_below="@+id/joinEmailTextField"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                            android:layout_below="@+id/continueBtn"
+                            android:layout_centerInParent="true"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/alreadyAccountTextView"
+                                    android:text="Already have an account? "
+                                    android:textColor="@color/black"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/signInTextView"
+                                    android:text="Sign In"
+                                    android:textColor="@color/base_color"
+                                    android:textStyle="bold"/>
+                        </LinearLayout>
+
+                </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

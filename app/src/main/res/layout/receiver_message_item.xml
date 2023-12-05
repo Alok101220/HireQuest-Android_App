@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
+    android:paddingEnd="15dp"
+    android:paddingStart="15dp">
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:id="@+id/receiver_user_profile_img"-->
+<!--        android:src="@drawable/IMG"-->
+<!--        app:shapeAppearance="@style/circle"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_centerVertical="true"/>-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_container"
+        android:layout_alignParentTop="true"
+        android:padding="15dp"
+        android:background="@drawable/receiver_message_background"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/message_text"
+            android:text="I saw the UI/UX Designer vacancy that you uploaded on linkedin yesterday and I am interested in joining your company."
+            android:textColor="@color/black"
+            android:textAlignment="viewStart"
+            android:textSize="14dp"
+            android:textDirection="rtl"
+            android:maxEms="15"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_timing"
+        android:text="09:00 am"
+        android:textSize="10dp"
+        android:layout_below="@+id/message_container"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>
